@@ -8,8 +8,10 @@ Repository to support 2023 IOOS Annual Meeting breakout session on xpublish and 
 
 Navigate to the directory where you want the project to be, then run this command:
 
-`cd my-project-dir/`
-`git clone https://github.com/asascience-open/nextgen-ioos-2023.git`
+```
+cd my-project-dir/
+git clone https://github.com/asascience-open/nextgen-ioos-2023.git
+```
 
 > If you will want to push changes to the repo, you should clone the repo using SSH instead. </br>
 > `git clone git@github.com:asascience-open/nextgen-ioos-2023.git`
