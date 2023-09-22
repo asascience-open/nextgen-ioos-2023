@@ -11,6 +11,9 @@ Navigate to the directory where you want the project to be, then run this comman
 `cd my-project-dir/`
 `git clone https://github.com/asascience-open/nextgen-ioos-2023.git`
 
+> If you will want to push changes to the repo, you should clone the repo using SSH instead. </br>
+> `git clone git@github.com:asascience-open/nextgen-ioos-2023.git`
+
 ## Setting up your Python environment
 
 Choose one of the following methods to set up your Python environment.
