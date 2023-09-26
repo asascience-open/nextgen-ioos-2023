@@ -9,7 +9,7 @@ class TutorialDataset(Plugin):
     name: str = "xarray-tutorial-datasets"
 
     @hookimpl
-    def get_dataset(self):
+    def get_datasets(self):
         return list(xr.tutorial.file_formats)
     
     @hookimpl
