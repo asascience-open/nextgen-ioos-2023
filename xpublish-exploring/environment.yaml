@@ -22,3 +22,5 @@ dependencies:
   - h5pyd
   - regionmask
   - ipykernel
+  - pooch
+  
