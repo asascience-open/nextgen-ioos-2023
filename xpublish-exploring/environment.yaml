@@ -7,7 +7,6 @@ dependencies:
   - xpublish>=0.3.1
   - xpublish-edr
   - xpublish-opendap
-  - xpublish-wms
   - dask
   - distributed
   - netcdf4
