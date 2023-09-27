@@ -41,11 +41,11 @@ class LmeSubsetPlugin(Plugin):
 
         return router
     
-        @router.get("/{lme_name}")
-        def get_lme_regions(lme_name: str):
-            return regions[lme_name].bbox
+    #    @router.get("/{lme_name}")
+    #    def get_lme_regions(lme_name: str):
+    #        return regions[lme_name].bbox
 
-        return router
+    #    return router
 
     
 
