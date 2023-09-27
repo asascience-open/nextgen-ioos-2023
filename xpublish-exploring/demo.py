@@ -15,9 +15,14 @@ class TutorialDataset(Plugin):
     @hookimpl
     def get_dataset(self, dataset_id: str):
         try:
-            return xr.tutorial.open_dataset(dataset_id)
+            ds = xr.tutorial.open_dataset(dataset_id)
+            if ds.cf.coords['longitude'].dims[0] == 'longitude':
+                ds = ds.assign_coords(longitude=(((ds.longitude + 180) % 360) - 180)).sortby('longitude')
+                # TODO: Yeah this should not be assumed... but for regular grids we will viz with rioxarray so for now we will assume
+                ds = ds.rio.write_crs(4326)
+            return ds
         except HTTPError:
-            return None
+            return ds
 
 
 

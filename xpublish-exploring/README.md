@@ -52,3 +52,10 @@ For the end-user, you can choose which variable to calculate using the URL synta
 
 Another custom plugin is defined in `lme.py`. You can access this plugin at http://localhost:9000/lme/
 
+This plugin will provide a subset of data based on the bounding box defined for each LME. The URL structure is `/[dataset]/lme/[lme_ID]` for example, http://localhost:9000/datasets/air_temperature/lme/EC/
+
+> Note: This will currently return "NaN" as the regions don't overlap. This is something we can work on as part of this breakout session.
+
+## Combining the Plugins
+
+Plugins can be combined by adding their URLs together. For example, to find the mean of a specific region, you could access http://localhost:9000/datasets/air_temperature/lme/EC/air/mean adding the variable and mean calculation to the end. 
