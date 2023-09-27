@@ -40,6 +40,12 @@ class LmeSubsetPlugin(Plugin):
             return {key: value["name"] for key, value in regions.items()}
 
         return router
+    
+        @router.get("/{lme_name}")
+        def get_lme_regions(lme_name: str):
+            return regions[lme_name].bbox
+
+        return router
 
     
 

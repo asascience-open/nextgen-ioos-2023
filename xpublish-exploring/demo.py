@@ -26,9 +26,9 @@ class TutorialDataset(Plugin):
 rest = Rest({})
 rest.register_plugin(TutorialDataset())
 
-# from mean import MeanPlugin
-# from lme import LmeSubsetPlugin
-# rest.register_plugin(MeanPlugin())
-# rest.register_plugin(LmeSubsetPlugin())
+from mean import MeanPlugin
+from lme import LmeSubsetPlugin
+rest.register_plugin(MeanPlugin())
+rest.register_plugin(LmeSubsetPlugin())
 
 rest.serve()
