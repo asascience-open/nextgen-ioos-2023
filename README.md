@@ -13,32 +13,13 @@ cd my-project-dir/
 git clone https://github.com/asascience-open/nextgen-ioos-2023.git
 ```
 
-> If you will want to push changes to the repo, you should clone the repo using SSH instead. </br>
+> Note: If you will want to push changes to the repo, you should clone the repo using SSH instead. </br>
 > `git clone git@github.com:asascience-open/nextgen-ioos-2023.git`
 
-## Setting up your Python environment
+## Creating Environments for Examples
 
-Choose one of the following methods to set up your Python environment.
+Each tutorial creates its own Python environment and may have different dependencies. It is recommended you install Anaconda or Micromamba to create those environments. The instructions for creating those environments are in each tutorial's directory.
 
-### Installation with Virtual Environment
+There are two tutorials in this repository. The first, `xpublish-exploring`, explores the features of xpublish and how to create and extend additional functionality.
 
-*You must have Python and venv installed for this to work.*
-
-Create your local virtual environment and install dependencies:
-
-```
-cd nextgen-ioos-2023/binder
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Installation with Anaconda
-
-*You must have conda installed for this to work.*
-
-```
-cd nextgen-ioos-2023/binder
-conda env create -f binder/environment.yml
-conda activate nextgen-notebooks
-```
+The second, `dbofs-examples`, demonstrates different methods for accessing data and discusses the different approaches and tradeoffs available.
