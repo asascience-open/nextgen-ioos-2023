@@ -22,4 +22,4 @@ Each tutorial creates its own Python environment and may have different dependen
 
 There are two tutorials in this repository. The first, `xpublish-exploring`, explores the features of xpublish and how to create and extend additional functionality.
 
-The second, `dbofs-examples`, demonstrates different methods for accessing data and discusses the different approaches and tradeoffs available.
+The second, `cloud-data`, demonstrates different methods for accessing data and discusses the different approaches and tradeoffs available.
