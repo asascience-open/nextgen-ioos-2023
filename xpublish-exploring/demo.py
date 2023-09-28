@@ -22,7 +22,7 @@ class TutorialDataset(Plugin):
                 ds = ds.rio.write_crs(4326)
             return ds
         except HTTPError:
-            return ds
+            return None
 
 
 
@@ -31,9 +31,11 @@ class TutorialDataset(Plugin):
 rest = Rest({})
 rest.register_plugin(TutorialDataset())
 
-from mean import MeanPlugin
-from lme import LmeSubsetPlugin
-rest.register_plugin(MeanPlugin())
-rest.register_plugin(LmeSubsetPlugin())
+### For this tutorial, you can uncomment the following lines to activate the other plugins:
+
+# from mean import MeanPlugin
+# from lme import LmeSubsetPlugin
+# rest.register_plugin(MeanPlugin())
+# rest.register_plugin(LmeSubsetPlugin())
 
 rest.serve()

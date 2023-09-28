@@ -48,13 +48,15 @@ XPublish's plugin system allows custom operations to be run against the data on 
 
 For the end-user, you can choose which variable to calculate using the URL syntax `/[dataset]/[variable]/mean`. For example, http://localhost:9000/datasets/air_temperature/air/mean
 
-## Working with Large Marine Environment (LME) regions
+## Working with Custom Bounding Boxes
 
 Another custom plugin is defined in `lme.py`. You can access this plugin at http://localhost:9000/lme/
 
+The plugin defines several regions of interest (not actual LME's, but several areas of interest from GMRI). The key or `lmi_ID` references a bounding box which can be used to subset any of the datasets, assuming those overlap.
+
 This plugin will provide a subset of data based on the bounding box defined for each LME. The URL structure is `/[dataset]/lme/[lme_ID]` for example, http://localhost:9000/datasets/air_temperature/lme/EC/
 
-> Note: This will currently return "NaN" as the regions don't overlap. This is something we can work on as part of this breakout session.
+> Note: This will currently return "NaN" when the regions don't overlap. This is something we can work on as part of this breakout session.
 
 ## Combining the Plugins
 
