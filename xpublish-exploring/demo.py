@@ -10,16 +10,22 @@ class TutorialDataset(Plugin):
 
     @hookimpl
     def get_datasets(self):
-        return list(xr.tutorial.file_formats)
+        tutorial_datasets = list(xr.tutorial.file_formats)
+        tutorial_datasets.append('ngofs2')
+        return tutorial_datasets
     
     @hookimpl
     def get_dataset(self, dataset_id: str):
+        print(dataset_id)
         try:
-            ds = xr.tutorial.open_dataset(dataset_id)
-            if ds.cf.coords['longitude'].dims[0] == 'longitude':
-                ds = ds.assign_coords(longitude=(((ds.longitude + 180) % 360) - 180)).sortby('longitude')
-                # TODO: Yeah this should not be assumed... but for regular grids we will viz with rioxarray so for now we will assume
-                ds = ds.rio.write_crs(4326)
+            if dataset_id == 'ngofs2':
+                ds = xr.open_dataset('nos.ngofs2.2ds.f001.20230928.t09z.nc', decode_times=False)
+            else:
+                ds = xr.tutorial.open_dataset(dataset_id)
+                if ds.cf.coords['longitude'].dims[0] == 'longitude':
+                    ds = ds.assign_coords(longitude=(((ds.longitude + 180) % 360) - 180)).sortby('longitude')
+                    # TODO: Yeah this should not be assumed... but for regular grids we will viz with rioxarray so for now we will assume
+                    ds = ds.rio.write_crs(4326)
             return ds
         except HTTPError:
             return None
