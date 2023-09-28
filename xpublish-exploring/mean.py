@@ -22,7 +22,10 @@ class MeanPlugin(Plugin):
                     status_code=404,
                     detail=f"Variable '{var_name}' not found in dataset",
                 )
-
-            return float(dataset[var_name].mean())
+            
+            mean = dataset[var_name].mean()
+            if mean.isnull():
+                return "NaN"
+            return float(mean)
 
         return router

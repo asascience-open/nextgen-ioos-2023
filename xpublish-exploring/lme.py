@@ -40,6 +40,12 @@ class LmeSubsetPlugin(Plugin):
             return {key: value["name"] for key, value in regions.items()}
 
         return router
+    
+    #    @router.get("/{lme_name}")
+    #    def get_lme_regions(lme_name: str):
+    #        return regions[lme_name].bbox
+
+    #    return router
 
     
 
@@ -53,14 +59,13 @@ class LmeSubsetPlugin(Plugin):
 
             # lat_slice = slice(bbox[2], bbox[3])
             lat_slice = slice(bbox[2], bbox[3])  # air_temperature lats are descending
-            # lon_slice = slice(bbox[0], bbox[1])
-            
+            lon_slice = slice(bbox[0], bbox[1])
 
             # print(lat_slice, lon_slice)
 
             dataset = deps.dataset(dataset_id)
 
-            sliced = dataset.cf.sel(latitude=lat_slice)
+            sliced = dataset.cf.sel(latitude=lat_slice, longitude=lon_slice)
 
             return sliced
         
